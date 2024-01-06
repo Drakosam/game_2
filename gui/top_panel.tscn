@@ -1,0 +1,42 @@
+[gd_scene load_steps=2 format=3 uid="uid://cpmvyfqyb4ewi"]
+
+[ext_resource type="Script" path="res://gui/top_panel.gd" id="1_0dygo"]
+
+[node name="TopPanel" type="Panel"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 50.0
+grow_horizontal = 2
+script = ExtResource("1_0dygo")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "Gold : "
+
+[node name="Gold" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "xxxxxxxx"
+
+[node name="Label2" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = " Silver : "
+
+[node name="Silver" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "xxxxxx"
+
+[node name="Label3" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = " Coper :"
+
+[node name="Coper" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "xxxxxxx"

@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://gxqch67dk0mt"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_6qio5"]
+[ext_resource type="PackedScene" uid="uid://dvdp1vxyiy7f0" path="res://gui/side_bar.tscn" id="2_olc0p"]
+[ext_resource type="PackedScene" uid="uid://cpmvyfqyb4ewi" path="res://gui/top_panel.tscn" id="3_nrs3m"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uf7jb"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_6qio5")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="SideBar" parent="CanvasLayer" instance=ExtResource("2_olc0p")]
+
+[node name="TopPanel" parent="CanvasLayer" instance=ExtResource("3_nrs3m")]
+
+[node name="MainView" type="Panel" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 50.0
+offset_right = -400.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_uf7jb")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.2
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
